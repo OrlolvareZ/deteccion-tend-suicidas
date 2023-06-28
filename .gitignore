@@ -1,3 +1,5 @@
 .gitattributes
 .gitconfig
 datos/hilos_4chan
+venv-tendencias
+.env

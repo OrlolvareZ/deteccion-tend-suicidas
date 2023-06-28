@@ -1,0 +1,5 @@
+openai==0.27.8
+pandas==2.0.2
+jupyter
+ipykernel==6.23.3
+python-dotenv
