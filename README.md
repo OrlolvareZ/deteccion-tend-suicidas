@@ -16,4 +16,7 @@ Si deseas contribuir a uno de los notebooks de este repositorio, por favor, corr
 ```
 
 ## Referencias
+<blockquote>
+    Borghero, F.; Quiroz D.; et. al. (Septiembre 2014). Guía para pacientes y familiares. _Conociendo el Trastorno Bipolar_. Ministerio de Salud, Sociedad Chilena de Trastornos Bipolares. Santiago.
+</blockquote>
     
