@@ -1,0 +1,9 @@
+--------------------------------------------
+========== ***CARACTERISTICAS*** ========== 
+--------------------------------------------
+> El web scrapping recopila comentarios en formato csv y json, ademas de archivos y metadatos asociados.
+> Los archivos anteriores se almacenan en una carpeta con el ID del hilo y su asunto correspondiente (Not subject, en acaso de no tener uno)
+> El archivo CSV (Mas importante) se compone de 7 columnas.
+  [* "Id del comentario", date_time,  subject,  comment/reply, name, is_op?, url]
+
+
