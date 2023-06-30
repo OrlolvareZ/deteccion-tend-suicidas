@@ -3,3 +3,5 @@ pandas==2.0.2
 jupyter
 ipykernel==6.23.3
 python-dotenv
+BASC_py4chan==0.6.5
+tqdm==4.46.1
