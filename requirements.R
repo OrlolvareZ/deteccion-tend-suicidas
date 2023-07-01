@@ -6,7 +6,7 @@ install.packages(
         "rjson",
         "stringr",
         "IRkernel",
-        "languageserver",
+        "languageserver"
     ),
     repos = "http://cran.us.r-project.org",
 )
