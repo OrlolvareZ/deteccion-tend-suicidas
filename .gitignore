@@ -1,6 +1,7 @@
+.env
 .gitattributes
 .gitconfig
-datos/hilos_4chan
-venv-tendencias
-.env
 .vscode
+datos/hilos_4chan/*
+datos/twitter/*
+venv-tendencias
