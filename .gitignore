@@ -4,4 +4,5 @@
 .vscode
 datos/hilos_4chan/*
 datos/twitter/*
+datos_limpios/datos_por_revisar/*
 venv-tendencias
