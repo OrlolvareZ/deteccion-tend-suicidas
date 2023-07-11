@@ -39,6 +39,11 @@ if __name__ == "__main__":
     parser.add_argument('--no-feature', dest='feature', action='store_false')
     parser.add_argument("--debug", type=str, help="Turn debugging on", required=False,
                         default='False', choices=['True', 'False', 'true', 'false'])
+    # Added argument for output directory
+    # ---------------------------------------------------------------------------------------------
+    parser.add_argument("--output_dir", type=str, help="Output directory for scraped data",
+                        required=False, default='scraped_data')
+    # ---------------------------------------------------------------------------------------------
     args = parser.parse_args()
 
     # Get Board Information and Begin Scrape
@@ -51,7 +56,12 @@ if __name__ == "__main__":
               datetime.now().strftime("%b-%d-%Y, %H:%M:%S"))
 
         # Defining file structure paths
-        board_name_dir = f'{board.name}/'
+        # Use board name as directory name if no output directory is specified
+
+        try:
+            board_name_dir = f'{args.output_dir}/{board.name}/'
+        except:
+            board_name_dir = f'{board.name}/'
 
         # Print Board Information
         board_metadata = (f'Board Title: {board.title}\n'
@@ -80,9 +90,7 @@ if __name__ == "__main__":
 
                 # Defining additional file structure paths
                 thread_dir = f'{board_name_dir}Thread-{thread_id}-{thread_subject}/'
-                thread_dir = re.sub(r'[<>:"/\\|?*]', '', thread_dir)
-
-                # Create directory for thread
+                # thread_dir = re.sub(r'[<>:"/\\|?*]', '', thread_dir)
                 os.makedirs(thread_dir, exist_ok=True)
 
                 # Get all posts in the thread
