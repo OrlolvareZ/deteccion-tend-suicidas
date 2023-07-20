@@ -65,3 +65,5 @@ queria_estar_muerto_complete.csv
 queria_morir_complete.csv
 quiero_estar_muerto_complete.csv
 quisiera_estar_muerto_complete.csv
+necesito_ayuda_complete.csv
+perdon_por_todo_complete_fixed.csv
