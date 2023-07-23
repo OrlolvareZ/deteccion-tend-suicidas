@@ -2,9 +2,8 @@
 .gitattributes
 .gitconfig
 .vscode
-datos/hilos_4chan/*
-datos/twitter/*
-datos_limpios/datos_por_revisar/*
+datos/*
 datos_limpios/4chan/*
 datos_limpios/twitter/*
+datos_limpios/datos_por_revisar/*
 venv-tendencias
