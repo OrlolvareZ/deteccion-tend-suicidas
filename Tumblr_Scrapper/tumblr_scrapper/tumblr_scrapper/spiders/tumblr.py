@@ -97,15 +97,30 @@ class TumblrSpider(scrapy.Spider):
         articles = scrapy.Selector(text=page_source).css('.ge_yK > .c79Av > .r0etU')
         for i, article in enumerate(articles):
             # Obtenemos el nombre de usuario
-            user_name = article.css('.sqHC2 , .NStl8 .BSUG4').css('::text').extract()
+            user_names = article.css('.sqHC2 , .NStl8 .BSUG4').css('::text').extract()
             # Utilizamos extract() para obtener ambos párrafos
-            user_comments = article.css('.GzjsW').css('::text').extract()
-            # Unimos los párrafos en una sola cadena usando '\n' como separador
-            user_comment = "\n ".join(user_comments)
+            user_comments = []
+            comment_sections = article.css('.GzjsW')
 
-            # Almacenamos el contenido scrapeado en contenedores para guardarlos como archivos JSON/CSV
-            items = TumblrScrapperItem(
-                user_name=user_name, 
-                user_comment=user_comment,
-                comment_url=TumblrSpider.comment_url[i])
-            yield items
+            # Dentro de cada sección de comentarios, podemos encontrar rupturas en la continuidad del texto,
+            # debido a la presencia de enlaces. Estos abren una etiqueta aparte y agregan más elementos a la lista
+            # de lo que hay usuarios en el artículo. Por lo tanto, en vez de usar extract() para obtener el texto
+            # en todas las secciones a la vez, lo usamos por sección.
+            for section in comment_sections:
+                comment = '. '.join(section.css('::text').extract())
+                user_comments.append(comment)
+            
+            # Tras bambalinas, Scrapy colocará los comentarios y los nombres de usuario en un objeto de tipo lista,
+            # pues típicamente se encontrará más de uno por cada post.
+            for user_name, user_comment in zip(user_names, user_comments): # Iteramos sobre los comentarios y nombres de usuario a la vez
+                
+                # Eliminamos los saltos de linea y espacios en blanco de los comentarios
+                user_comment = user_comment.replace('\n', '. ').strip()
+                
+                # Almacenamos el contenido scrapeado en contenedores para guardarlos como archivos JSON/CSV
+                items = TumblrScrapperItem(
+                    user_name=user_name,
+                    user_comment=user_comment,
+                    comment_url=TumblrSpider.comment_url[i]
+                )
+                yield items
