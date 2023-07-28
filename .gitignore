@@ -7,3 +7,6 @@ datos_limpios/4chan/*
 datos_limpios/twitter/*
 datos_limpios/datos_por_revisar/*
 venv-tendencias
+*.jsonl
+*.csv
+__pycache__
