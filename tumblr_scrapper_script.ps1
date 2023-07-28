@@ -7,8 +7,7 @@ if ($env:TUMBLR_EMAIL -eq $null -or $env:TUMBLR_PASSWORD -eq $null) {
     Write-Host "Correo: "
     $env:TUMBLR_EMAIL = Read-Host
     Write-Host "Contrasena: "
-    # Oculta la contraseña
-    $env:TUMBLR_PASSWORD = Read-Host -AsSecureString
+    $env:TUMBLR_PASSWORD = Read-Host
 
     # Guarda las variables de entorno
     [Environment]::SetEnvironmentVariable("TUMBLR_EMAIL", $env:TUMBLR_EMAIL, "User")
