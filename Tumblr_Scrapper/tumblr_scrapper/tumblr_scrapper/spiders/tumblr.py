@@ -9,7 +9,6 @@ from selenium.webdriver.chrome.options import Options
 import time
 from ..items import TumblrScrapperItem
 
-
 class TumblrSpider(scrapy.Spider):
     # Nombre de la araña para ejecutar el script
     name = "tumblr"
@@ -29,7 +28,6 @@ class TumblrSpider(scrapy.Spider):
         self.password = str(password)
 
     # Funcion que ejecuta el codigo principal
-
     def parse(self, response):
         #Obtenemos la URL de la pagina que introdujo el usuario
         current_url = response.url
