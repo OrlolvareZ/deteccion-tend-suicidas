@@ -74,6 +74,8 @@ implementan diferentes técnicas de procesamiento de lenguaje natural para la de
 
 ## **Para ejecutar/contribuir**
 
+🐍 Antes que nada, asegúrate de tener una instalación de Python 3 y R. ®
+
 Si deseas ejecutar o contribuir a uno de los notebooks de este repositorio, por favor, corre el script de prerrequisitos:
 
 ```powershell
