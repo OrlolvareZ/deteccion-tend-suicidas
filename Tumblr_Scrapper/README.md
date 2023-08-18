@@ -18,7 +18,7 @@ Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nom
 
 5. Para ejecutar el script, necesitas introducir un comando en la terminal de la siguiente manera:
 
-	scrapy crawl tumblr -a email="email" -a password= -a url='url' -a iterations=n -o output_name.jsonl
+	scrapy crawl tumblr -a email="email" -a password="password" -a url='url' -a iterations=n -o output_name.jsonl
 
 Donde:
 
