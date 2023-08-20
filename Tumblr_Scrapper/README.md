@@ -23,6 +23,7 @@ Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nom
 5. Actualiza el driver de Chrome de acuerdo a tu version del navegador:
 
  - Para ello deberas ir al siguiente sitio web y descargar la version que coincida o que más se aproxime al tuyo:
+   
       	- `https://googlechromelabs.github.io/chrome-for-testing/`
    	- `https://chromedriver.chromium.org/downloads`
    	
