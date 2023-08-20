@@ -10,15 +10,21 @@ Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nom
 
 3. Instala los paquetes del archivo `requirements.txt` usando el siguiente comando:
 
+```
 	pip install -r requirements.txt
+```
 
 4. Ve a la carpeta `tumblr_scrapper` que contiene el spider de Scrapy:
 
+```
  	cd tumblr_scrapper/tumblr_scrapper
+```
 
 5. Para ejecutar el script, necesitas introducir un comando en la terminal de la siguiente manera:
 
+```
 	scrapy crawl tumblr -a email="email" -a password="password" -a url='url' -a iterations=n -o output_name.jsonl
+```
 
 Donde:
 
