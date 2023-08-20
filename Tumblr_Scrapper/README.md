@@ -20,7 +20,13 @@ Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nom
  	cd tumblr_scrapper/tumblr_scrapper
 ```
 
-5. Para ejecutar el script, necesitas introducir un comando en la terminal de la siguiente manera:
+5. Actualiza el driver de Chrome de acuerdo a tu version del navegador:
+
+ - Para ello deberas ir al siguiente sitio web y descargar la version que coincida o que más se aproxime al tuyo:
+      	- `https://googlechromelabs.github.io/chrome-for-testing/`
+   	- `https://chromedriver.chromium.org/downloads`
+   	
+6. Para ejecutar el script, necesitas introducir un comando en la terminal de la siguiente manera:
 
 ```
 	scrapy crawl tumblr -a email="email" -a password="password" -a url='url' -a iterations=n -o output_name.jsonl
@@ -43,4 +49,4 @@ Donde:
 - `https://www.tumblr.com/hearttattack` (Página estándar - SÍ se puede scrapear)
 - `https://sleep-sounds-nice-rn.tumblr.com` (Página personalizada - NO se puede scrapear)
 
-Al seguir estas instrucciones, podrás utilizar el script para obtener datos de un blog de Tumblr específico. Recuerda siempre tener en cuenta las consideraciones mencionadas y respetar los términos de uso de la plataforma al realizar scraping de datos.
+
