@@ -1,6 +1,6 @@
 # WEB SCRAPPING 4CHAN v2
 
-Segunda versión del Web Scraper para 4Chan. Más específicamente, busca en el catálogo de un foro dado en 4Chan todos los comentarios, archivos y metadatos asociados con la ayuda de la Biblioteca Python BASC 4Chan.
+Esta es la segunda versión del script en Python, llamado Scraper-4chan, que se utiliza para recopilar todos los comentarios asociados a hilos dentro de los posts de un tablero en la plataforma 4chan. El script almacena los datos recopilados en una carpeta con el nombre del hilo al que pertenecen en un archivo CSV.
 
 ## Novedades
 1. Se corrigio el problema de almacenamiento de los archivos CSV. Ahora se crea una carpeta llamada "scraped_data" donde cada tablero de 4chan tendra su propia carpeta donde se almacenaran los hilos obtenidos del scrapping de forma más ordenada.
