@@ -1,8 +1,0 @@
---------------------------------------------
-========== ***CARACTERISTICAS*** ========== 
---------------------------------------------
-> El unico detalle del programa es que las carpetas las crea afuera de la carpeta donde deberia crearlas.
-> El archivo CSV se compone de 4 columnas.
-  [date_time, comment/reply, name, url]
-
-
