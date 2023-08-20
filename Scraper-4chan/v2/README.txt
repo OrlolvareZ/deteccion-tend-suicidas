@@ -1,71 +1,79 @@
-============================
-|| WEB SCRAPPING 4CHAN v1 ||
-============================
+# WEB SCRAPPING 4CHAN v1
 
-Primera version del Web Scrapper para 4Chan. Mas especificamente, busca en el catálogo de un foro dado en 4Chan todos los comentarios, archivos y metadatos asociados con la ayuda de BASC 4Chan Python Library.
+Primera versión del Web Scraper para 4Chan. Más específicamente, busca en el catálogo de un foro dado en 4Chan todos los comentarios, archivos y metadatos asociados con la ayuda de la Biblioteca Python BASC 4Chan.
 
---------------------------------------------
-========== ***REQUERIMIENTOS*** ========== 
---------------------------------------------
-1) Instalar las siguientes librerias:
-** BASC_py4chan==0.6.5
-** tqdm==4.46.1
+---
 
-2) Si se tiene una version de python 3.9 o superior, entonces se tiene que remplazar el codigo de util.py en la siguiente ruta:
+## Requerimientos
 
-c:\users\[Nombre de usuario]\appData\local\programs\python\python[version]\lib\site-packages\basc_py4chan\util.py
+1. Instalar las siguientes librerías:
+   - **BASC_py4chan==0.6.5**
+   - **tqdm==4.46.1**
 
->>> Ejemplo <<<
-C:\Users\migue\AppData\Local\Programs\Python\Python310\Lib\site-packages\basc_py4chan\util.py
+2. Si tienes una versión de Python 3.9 o superior, debes reemplazar el código en el archivo `util.py` en la siguiente ruta:
 
-El archivo se deja en el repositorio:
+    ```
+    c:\users\[Nombre de usuario]\appData\local\programs\python\python[versión]\lib\site-packages\basc_py4chan\util.py
+    ```
 
->>> CODIGO util.py a remplazar <<<
-_____________________________________________________________
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""Utility functions."""
+    **Ejemplo:**
 
-import re
-import sys
+    ```
+    C:\Users\migue\AppData\Local\Programs\Python\Python310\Lib\site-packages\basc_py4chan\util.py
+    ```
 
-#HTML parser compat fix for python 3.9 and onwards
-if sys.version_info[0] == 3 and sys.version_info[1] >= 9:
-    import html
-    _parser = html 
-else:
-    # HTML parser was renamed in python 3.x
-    try:
-        from html.parser import HTMLParser
-    except ImportError:
-        from HTMLParser import HTMLParser
+    El archivo a reemplazar se encuentra en el repositorio.
 
-    _parser = HTMLParser()
+    Contenido del archivo `util.py` a reemplazar:
 
-def clean_comment_body(body):
-    """Returns given comment HTML as plaintext.
+    ```python
+    #!/usr/bin/env python
+    # -*- coding: utf-8 -*-
+    """Funciones de utilidad."""
 
-    Converts all HTML tags and entities within 4chan comments
-    into human-readable text equivalents.
-    """
-    body = _parser.unescape(body)
-    body = re.sub(r'<a [^>]+>(.+?)</a>', r'\1', body)
-    body = body.replace('<br>', '\n')
-    body = re.sub(r'<.+?>', '', body)
-    return body
-___________________________________________________________
+    import re
+    import sys
 
---------------------------------------------
-========== ***EJECUCION*** ========== 
---------------------------------------------
-> Se ejecuta desde la terminal y el programa tiene los siguientes parametros:
+    # Corrección de compatibilidad del analizador HTML para Python 3.9 en adelante
+    if sys.version_info[0] == 3 and sys.version_info[1] >= 9:
+        import html
+        _parser = html
+    else:
+        # El analizador HTML cambió de nombre en Python 3.x
+        try:
+            from html.parser import HTMLParser
+        except ImportError:
+            from HTMLParser import HTMLParser
+
+        _parser = HTMLParser()
+
+    def clean_comment_body(body):
+        """Devuelve el HTML del comentario dado como texto plano.
+
+        Convierte todas las etiquetas y entidades HTML dentro de los comentarios de 4chan
+        en equivalentes de texto legibles por humanos.
+        """
+        body = _parser.unescape(body)
+        body = re.sub(r'<a [^>]+>(.+?)</a>', r'\1', body)
+        body = body.replace('<br>', '\n')
+        body = re.sub(r'<.+?>', '', body)
+        return body
+    ```
+
+---
+
+## Ejecución
+
+Se ejecuta desde la terminal y el programa acepta los siguientes parámetros:
 
 1. **--board_name**
-   - Tablero de 4Chan en el cual se recopilara la informacion (Obligatorio)
-2. **--num_threads**: 
-   - Numero de hilos en los que se recopilara informacion (Obligatorio)
-3. **--debug**:
-   - Informacion adicional (Opcional)
+   - Tablero de 4Chan en el cual se recopilará la información (Obligatorio)
+2. **--num_threads**
+   - Número de hilos en los que se recopilará información (Obligatorio)
+3. **--debug**
+   - Información adicional (Opcional)
 
->>> Ejemplo <<<
+**Ejemplo de ejecución:**
+
+```bash
 python 4chan_scraper.py --board_name "pol" --num_threads 5 --debug "False"
