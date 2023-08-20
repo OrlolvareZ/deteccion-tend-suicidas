@@ -24,8 +24,8 @@ Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nom
 
  - Para ello deberas ir al siguiente sitio web y descargar la version que coincida o que más se aproxime al tuyo:
    
-      	- `https://googlechromelabs.github.io/chrome-for-testing/`
-   	- `https://chromedriver.chromium.org/downloads`
+   - `https://googlechromelabs.github.io/chrome-for-testing/` Si tu version de Google Chrome es mayor o igual a 115
+   - `https://chromedriver.chromium.org/downloads` Si tu version de Google Chrome es anterior a 115
    	
 6. Para ejecutar el script, necesitas introducir un comando en la terminal de la siguiente manera:
 
