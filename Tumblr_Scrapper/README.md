@@ -26,6 +26,8 @@ Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nom
    
    - `https://googlechromelabs.github.io/chrome-for-testing/` Si tu version de Google Chrome es mayor o igual a 115
    - `https://chromedriver.chromium.org/downloads` Si tu version de Google Chrome es anterior a 115
+     
+ - Ahora en la carpeta `spider`, remplaza el archivo `chromedriver` con el que acabas de descargar.
    	
 6. Para ejecutar el script, necesitas introducir un comando en la terminal de la siguiente manera:
 
