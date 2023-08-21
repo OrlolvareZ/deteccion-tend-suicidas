@@ -57,5 +57,3 @@ Donde:
 ```
 	C:\Users\[User_name]\.cache\selenium\chromedriver\win32
 ```	
-
-
