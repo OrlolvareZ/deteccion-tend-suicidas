@@ -1,6 +1,6 @@
 # Tumblr_Scrapper
 
-Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nombres de usuarios, texto de los posts principales y sus correspondientes URLs de un blog de Tumblr.
+Este es un script de web scraping que utiliza Scrapy y Selenium para obtener nombres de usuarios, texto de los posts principales y sus correspondientes URLs de un blog estándar de Tumblr.
 
 ## Instalación
 
