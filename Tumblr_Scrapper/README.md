@@ -49,8 +49,8 @@ Donde:
 
 - No es posible scrapear todo tipo de blog de Tumblr, solo funciona con blogs de estilo estándar. Una buena forma de diferenciarlo es basándose en el URL, como se muestra a continuación:
 
-- `https://www.tumblr.com/hearttattack` (Página estándar - SÍ se puede scrapear)
-- `https://sleep-sounds-nice-rn.tumblr.com` (Página personalizada - NO se puede scrapear)
+  - `https://www.tumblr.com/hearttattack` (Página estándar - SÍ se puede scrapear)
+  - `https://sleep-sounds-nice-rn.tumblr.com` (Página personalizada - NO se puede scrapear)
 
 - En caso de ya tener instalado la libreria de `Selenium` en tu equipo con anterioridad. Dirigete a una ruta similar a esta en tu equipo y remplaza el archivo descargado en la carpeta de la version de tu driver actual:
 
